@@ -1,0 +1,17 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Model:
+	arguments+=Function;
+	
+Function:
+	'(' Operation varA=INT (INT)* ')' | List;
+
+Operation:
+	'+'|'-'
+;
+
+List:
+	"`"? "(" (INT)*")"
+;

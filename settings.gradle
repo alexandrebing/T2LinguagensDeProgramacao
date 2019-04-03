@@ -1,0 +1,3 @@
+include 'org.xtext.example.skem'
+include 'org.xtext.example.skem.ide'
+include 'org.xtext.example.skem.tests'
