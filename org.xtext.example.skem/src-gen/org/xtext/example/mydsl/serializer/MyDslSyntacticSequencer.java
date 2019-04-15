@@ -32,10 +32,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getINTRule())
 			return getINTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getListRule())
-			return getListToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getOperationRule())
-			return getOperationToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -46,28 +42,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "";
-	}
-	
-	/**
-	 * List:
-	 * 	"`"? "(" (INT)*")"
-	 * ;
-	 */
-	protected String getListToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "()";
-	}
-	
-	/**
-	 * Operation:
-	 * 	'+'|'-'
-	 * ;
-	 */
-	protected String getOperationToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "+";
 	}
 	
 	@Override

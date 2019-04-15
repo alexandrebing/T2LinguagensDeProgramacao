@@ -66,6 +66,8 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     switch (eClass.getClassifierID())
     {
       case MyDslPackage.MODEL: return createModel();
+      case MyDslPackage.ARGUMENTS: return createArguments();
+      case MyDslPackage.VARIABLE: return createVariable();
       case MyDslPackage.FUNCTION: return createFunction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -81,6 +83,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Arguments createArguments()
+  {
+    ArgumentsImpl arguments = new ArgumentsImpl();
+    return arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**

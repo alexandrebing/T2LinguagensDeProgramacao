@@ -78,20 +78,112 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getGreetingsFunctionParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getArgumentsArgumentsParserRuleCall_0());
 			}
-			lv_greetings_0_0=ruleFunction
+			lv_arguments_0_0=ruleArguments
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
 				add(
 					$current,
-					"greetings",
-					lv_greetings_0_0,
-					"org.xtext.example.mydsl.MyDsl.Function");
+					"arguments",
+					lv_arguments_0_0,
+					"org.xtext.example.mydsl.MyDsl.Arguments");
 				afterParserOrEnumRuleCall();
 			}
+		)
+	)
+;
+
+// Entry rule entryRuleArguments
+entryRuleArguments returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getArgumentsRule()); }
+	iv_ruleArguments=ruleArguments
+	{ $current=$iv_ruleArguments.current; }
+	EOF;
+
+// Rule Arguments
+ruleArguments returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getArgumentsAccess().getFunctionParserRuleCall_0());
+		}
+		this_Function_0=ruleFunction
+		{
+			$current = $this_Function_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getArgumentsAccess().getVariableParserRuleCall_1());
+		}
+		this_Variable_1=ruleVariable
+		{
+			$current = $this_Variable_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleVariable
+entryRuleVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableRule()); }
+	iv_ruleVariable=ruleVariable
+	{ $current=$iv_ruleVariable.current; }
+	EOF;
+
+// Rule Variable
+ruleVariable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_varA_0_0=RULE_INT
+				{
+					newLeafNode(lv_varA_0_0, grammarAccess.getVariableAccess().getVarAINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"varA",
+						lv_varA_0_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_varB_1_0=RULE_ID
+				{
+					newLeafNode(lv_varB_1_0, grammarAccess.getVariableAccess().getVarBIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"varB",
+						lv_varB_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
 		)
 	)
 ;
@@ -117,13 +209,25 @@ ruleFunction returns [EObject current=null]
 			{
 				newLeafNode(otherlv_0, grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_0_0());
 			}
-			{
-				newCompositeNode(grammarAccess.getFunctionAccess().getOperationParserRuleCall_0_1());
-			}
-			ruleOperation
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFunctionAccess().getOpOperationParserRuleCall_0_1_0());
+					}
+					lv_op_1_0=ruleOperation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFunctionRule());
+						}
+						set(
+							$current,
+							"op",
+							lv_op_1_0,
+							"org.xtext.example.mydsl.MyDsl.Operation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
 			(
 				(
 					lv_varA_2_0=RULE_INT
@@ -154,13 +258,25 @@ ruleFunction returns [EObject current=null]
 			}
 		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getFunctionAccess().getListParserRuleCall_1());
-		}
-		ruleList
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFunctionAccess().getListListParserRuleCall_1_0());
+				}
+				lv_list_5_0=ruleList
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFunctionRule());
+					}
+					set(
+						$current,
+						"list",
+						lv_list_5_0,
+						"org.xtext.example.mydsl.MyDsl.List");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

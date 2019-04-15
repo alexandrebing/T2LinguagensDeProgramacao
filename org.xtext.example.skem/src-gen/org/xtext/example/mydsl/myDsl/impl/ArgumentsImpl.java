@@ -3,55 +3,57 @@
  */
 package org.xtext.example.mydsl.myDsl.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.xtext.example.mydsl.myDsl.Arguments;
-import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Arguments</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ModelImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ArgumentsImpl#getVarA <em>Var A</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Arguments
 {
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The default value of the '{@link #getVarA() <em>Var A</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getVarA()
    * @generated
    * @ordered
    */
-  protected EList<Arguments> arguments;
+  protected static final int VAR_A_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getVarA() <em>Var A</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVarA()
+   * @generated
+   * @ordered
+   */
+  protected int varA = VAR_A_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected ArgumentsImpl()
   {
     super();
   }
@@ -64,7 +66,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.MODEL;
+    return MyDslPackage.Literals.ARGUMENTS;
   }
 
   /**
@@ -72,13 +74,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Arguments> getArguments()
+  public int getVarA()
   {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Arguments>(Arguments.class, this, MyDslPackage.MODEL__ARGUMENTS);
-    }
-    return arguments;
+    return varA;
   }
 
   /**
@@ -86,15 +84,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setVarA(int newVarA)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.MODEL__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    int oldVarA = varA;
+    varA = newVarA;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ARGUMENTS__VAR_A, oldVarA, varA));
   }
 
   /**
@@ -107,8 +102,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__ARGUMENTS:
-        return getArguments();
+      case MyDslPackage.ARGUMENTS__VAR_A:
+        return getVarA();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +113,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Arguments>)newValue);
+      case MyDslPackage.ARGUMENTS__VAR_A:
+        setVarA((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +135,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__ARGUMENTS:
-        getArguments().clear();
+      case MyDslPackage.ARGUMENTS__VAR_A:
+        setVarA(VAR_A_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +152,27 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MyDslPackage.ARGUMENTS__VAR_A:
+        return varA != VAR_A_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (varA: ");
+    result.append(varA);
+    result.append(')');
+    return result.toString();
+  }
+
+} //ArgumentsImpl

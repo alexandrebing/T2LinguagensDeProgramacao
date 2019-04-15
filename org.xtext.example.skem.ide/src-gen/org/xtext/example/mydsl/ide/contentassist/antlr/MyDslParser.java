@@ -31,12 +31,18 @@ public class MyDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getArgumentsAccess().getAlternatives(), "rule__Arguments__Alternatives");
+					put(grammarAccess.getVariableAccess().getAlternatives(), "rule__Variable__Alternatives");
 					put(grammarAccess.getFunctionAccess().getAlternatives(), "rule__Function__Alternatives");
 					put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
 					put(grammarAccess.getFunctionAccess().getGroup_0(), "rule__Function__Group_0__0");
 					put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
-					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
+					put(grammarAccess.getModelAccess().getArgumentsAssignment(), "rule__Model__ArgumentsAssignment");
+					put(grammarAccess.getVariableAccess().getVarAAssignment_0(), "rule__Variable__VarAAssignment_0");
+					put(grammarAccess.getVariableAccess().getVarBAssignment_1(), "rule__Variable__VarBAssignment_1");
+					put(grammarAccess.getFunctionAccess().getOpAssignment_0_1(), "rule__Function__OpAssignment_0_1");
 					put(grammarAccess.getFunctionAccess().getVarAAssignment_0_2(), "rule__Function__VarAAssignment_0_2");
+					put(grammarAccess.getFunctionAccess().getListAssignment_1(), "rule__Function__ListAssignment_1");
 				}
 			};
 		}

@@ -3,7 +3,6 @@
  */
 package org.xtext.example.mydsl.myDsl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,39 +13,66 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Function#getVarA <em>Var A</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Function#getOp <em>Op</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Function#getList <em>List</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFunction()
  * @model
  * @generated
  */
-public interface Function extends EObject
+public interface Function extends Arguments
 {
   /**
-   * Returns the value of the '<em><b>Var A</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var A</em>' attribute isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var A</em>' attribute.
-   * @see #setVarA(int)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFunction_VarA()
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFunction_Op()
    * @model
    * @generated
    */
-  int getVarA();
+  String getOp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Function#getVarA <em>Var A</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Function#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var A</em>' attribute.
-   * @see #getVarA()
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
    * @generated
    */
-  void setVarA(int value);
+  void setOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List</em>' attribute.
+   * @see #setList(String)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFunction_List()
+   * @model
+   * @generated
+   */
+  String getList();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Function#getList <em>List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List</em>' attribute.
+   * @see #getList()
+   * @generated
+   */
+  void setList(String value);
 
 } // Function

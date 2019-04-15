@@ -68,13 +68,13 @@ public interface MyDslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__ARGUMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +86,14 @@ public interface MyDslPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl <em>Function</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ArgumentsImpl <em>Arguments</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.FunctionImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFunction()
+   * @see org.xtext.example.mydsl.myDsl.impl.ArgumentsImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getArguments()
    * @generated
    */
-  int FUNCTION = 1;
+  int ARGUMENTS = 1;
 
   /**
    * The feature id for the '<em><b>Var A</b></em>' attribute.
@@ -102,7 +102,90 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__VAR_A = 0;
+  int ARGUMENTS__VAR_A = 0;
+
+  /**
+   * The number of structural features of the '<em>Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENTS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.VariableImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 2;
+
+  /**
+   * The feature id for the '<em><b>Var A</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__VAR_A = ARGUMENTS__VAR_A;
+
+  /**
+   * The feature id for the '<em><b>Var B</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__VAR_B = ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = ARGUMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl <em>Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.FunctionImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFunction()
+   * @generated
+   */
+  int FUNCTION = 3;
+
+  /**
+   * The feature id for the '<em><b>Var A</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__VAR_A = ARGUMENTS__VAR_A;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__OP = ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__LIST = ARGUMENTS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -111,7 +194,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = 1;
+  int FUNCTION_FEATURE_COUNT = ARGUMENTS_FEATURE_COUNT + 2;
 
 
   /**
@@ -125,15 +208,57 @@ public interface MyDslPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Model#getArguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Model#getArguments()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Arguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Arguments</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Arguments
+   * @generated
+   */
+  EClass getArguments();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Arguments#getVarA <em>Var A</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var A</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Arguments#getVarA()
+   * @see #getArguments()
+   * @generated
+   */
+  EAttribute getArguments_VarA();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Variable#getVarB <em>Var B</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var B</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Variable#getVarB()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_VarB();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Function <em>Function</em>}'.
@@ -146,15 +271,26 @@ public interface MyDslPackage extends EPackage
   EClass getFunction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Function#getVarA <em>Var A</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Function#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var A</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Function#getVarA()
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Function#getOp()
    * @see #getFunction()
    * @generated
    */
-  EAttribute getFunction_VarA();
+  EAttribute getFunction_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Function#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>List</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Function#getList()
+   * @see #getFunction()
+   * @generated
+   */
+  EAttribute getFunction_List();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,12 +326,48 @@ public interface MyDslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__ARGUMENTS = eINSTANCE.getModel_Arguments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ArgumentsImpl <em>Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.ArgumentsImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getArguments()
+     * @generated
+     */
+    EClass ARGUMENTS = eINSTANCE.getArguments();
+
+    /**
+     * The meta object literal for the '<em><b>Var A</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARGUMENTS__VAR_A = eINSTANCE.getArguments_VarA();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.VariableImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Var B</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__VAR_B = eINSTANCE.getVariable_VarB();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl <em>Function</em>}' class.
@@ -208,12 +380,20 @@ public interface MyDslPackage extends EPackage
     EClass FUNCTION = eINSTANCE.getFunction();
 
     /**
-     * The meta object literal for the '<em><b>Var A</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION__VAR_A = eINSTANCE.getFunction_VarA();
+    EAttribute FUNCTION__OP = eINSTANCE.getFunction_Op();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION__LIST = eINSTANCE.getFunction_List();
 
   }
 

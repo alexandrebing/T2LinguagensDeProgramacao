@@ -24,46 +24,97 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsFunctionParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cArgumentsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cArgumentsArgumentsParserRuleCall_0 = (RuleCall)cArgumentsAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Function;
+		//	arguments+=Arguments;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Function
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//arguments+=Arguments
+		public Assignment getArgumentsAssignment() { return cArgumentsAssignment; }
+		
+		//Arguments
+		public RuleCall getArgumentsArgumentsParserRuleCall_0() { return cArgumentsArgumentsParserRuleCall_0; }
+	}
+	public class ArgumentsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Arguments");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFunctionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Arguments:
+		//	Function | Variable;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Function | Variable
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Function
-		public RuleCall getGreetingsFunctionParserRuleCall_0() { return cGreetingsFunctionParserRuleCall_0; }
+		public RuleCall getFunctionParserRuleCall_0() { return cFunctionParserRuleCall_0; }
+		
+		//Variable
+		public RuleCall getVariableParserRuleCall_1() { return cVariableParserRuleCall_1; }
+	}
+	public class VariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Variable");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cVarAAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cVarAINTTerminalRuleCall_0_0 = (RuleCall)cVarAAssignment_0.eContents().get(0);
+		private final Assignment cVarBAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cVarBIDTerminalRuleCall_1_0 = (RuleCall)cVarBAssignment_1.eContents().get(0);
+		
+		//Variable:
+		//	varA=INT | varB=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//varA=INT | varB=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//varA=INT
+		public Assignment getVarAAssignment_0() { return cVarAAssignment_0; }
+		
+		//INT
+		public RuleCall getVarAINTTerminalRuleCall_0_0() { return cVarAINTTerminalRuleCall_0_0; }
+		
+		//varB=ID
+		public Assignment getVarBAssignment_1() { return cVarBAssignment_1; }
+		
+		//ID
+		public RuleCall getVarBIDTerminalRuleCall_1_0() { return cVarBIDTerminalRuleCall_1_0; }
 	}
 	public class FunctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Function");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cOperationParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Assignment cOpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cOpOperationParserRuleCall_0_1_0 = (RuleCall)cOpAssignment_0_1.eContents().get(0);
 		private final Assignment cVarAAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cVarAINTTerminalRuleCall_0_2_0 = (RuleCall)cVarAAssignment_0_2.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
 		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final RuleCall cListParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cListAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cListListParserRuleCall_1_0 = (RuleCall)cListAssignment_1.eContents().get(0);
 		
 		//Function:
-		//	'(' Operation varA=INT INT* ')' | List;
+		//	'(' op=Operation varA=INT INT* ')' | list=List;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Operation varA=INT INT* ')' | List
+		//'(' op=Operation varA=INT INT* ')' | list=List
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'(' Operation varA=INT INT* ')'
+		//'(' op=Operation varA=INT INT* ')'
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 		
+		//op=Operation
+		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
+		
 		//Operation
-		public RuleCall getOperationParserRuleCall_0_1() { return cOperationParserRuleCall_0_1; }
+		public RuleCall getOpOperationParserRuleCall_0_1_0() { return cOpOperationParserRuleCall_0_1_0; }
 		
 		//varA=INT
 		public Assignment getVarAAssignment_0_2() { return cVarAAssignment_0_2; }
@@ -77,8 +128,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
 		
+		//list=List
+		public Assignment getListAssignment_1() { return cListAssignment_1; }
+		
 		//List
-		public RuleCall getListParserRuleCall_1() { return cListParserRuleCall_1; }
+		public RuleCall getListListParserRuleCall_1_0() { return cListListParserRuleCall_1_0; }
 	}
 	public class OperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Operation");
@@ -129,6 +183,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
+	private final ArgumentsElements pArguments;
+	private final VariableElements pVariable;
 	private final FunctionElements pFunction;
 	private final OperationElements pOperation;
 	private final ListElements pList;
@@ -143,6 +199,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pArguments = new ArgumentsElements();
+		this.pVariable = new VariableElements();
 		this.pFunction = new FunctionElements();
 		this.pOperation = new OperationElements();
 		this.pList = new ListElements();
@@ -176,7 +234,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Function;
+	//	arguments+=Arguments;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -185,8 +243,28 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
+	//Arguments:
+	//	Function | Variable;
+	public ArgumentsElements getArgumentsAccess() {
+		return pArguments;
+	}
+	
+	public ParserRule getArgumentsRule() {
+		return getArgumentsAccess().getRule();
+	}
+	
+	//Variable:
+	//	varA=INT | varB=ID;
+	public VariableElements getVariableAccess() {
+		return pVariable;
+	}
+	
+	public ParserRule getVariableRule() {
+		return getVariableAccess().getRule();
+	}
+	
 	//Function:
-	//	'(' Operation varA=INT INT* ')' | List;
+	//	'(' op=Operation varA=INT INT* ')' | list=List;
 	public FunctionElements getFunctionAccess() {
 		return pFunction;
 	}

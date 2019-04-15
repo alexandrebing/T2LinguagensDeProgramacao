@@ -7,10 +7,17 @@
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="skem" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Arguments">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Arguments/varA"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Variable/varB"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Function/varA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Function/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Function/list"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

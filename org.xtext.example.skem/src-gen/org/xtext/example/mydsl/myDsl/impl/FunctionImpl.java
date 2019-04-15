@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.Function;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
@@ -21,32 +20,53 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl#getVarA <em>Var A</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.FunctionImpl#getList <em>List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FunctionImpl extends MinimalEObjectImpl.Container implements Function
+public class FunctionImpl extends ArgumentsImpl implements Function
 {
   /**
-   * The default value of the '{@link #getVarA() <em>Var A</em>}' attribute.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarA()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final int VAR_A_EDEFAULT = 0;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVarA() <em>Var A</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarA()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected int varA = VAR_A_EDEFAULT;
+  protected String op = OP_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getList() <em>List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getList()
+   * @generated
+   * @ordered
+   */
+  protected static final String LIST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getList() <em>List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getList()
+   * @generated
+   * @ordered
+   */
+  protected String list = LIST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +94,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getVarA()
+  public String getOp()
   {
-    return varA;
+    return op;
   }
 
   /**
@@ -84,12 +104,35 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarA(int newVarA)
+  public void setOp(String newOp)
   {
-    int oldVarA = varA;
-    varA = newVarA;
+    String oldOp = op;
+    op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION__VAR_A, oldVarA, varA));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getList()
+  {
+    return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setList(String newList)
+  {
+    String oldList = list;
+    list = newList;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION__LIST, oldList, list));
   }
 
   /**
@@ -102,8 +145,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case MyDslPackage.FUNCTION__VAR_A:
-        return getVarA();
+      case MyDslPackage.FUNCTION__OP:
+        return getOp();
+      case MyDslPackage.FUNCTION__LIST:
+        return getList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +163,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case MyDslPackage.FUNCTION__VAR_A:
-        setVarA((Integer)newValue);
+      case MyDslPackage.FUNCTION__OP:
+        setOp((String)newValue);
+        return;
+      case MyDslPackage.FUNCTION__LIST:
+        setList((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +183,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case MyDslPackage.FUNCTION__VAR_A:
-        setVarA(VAR_A_EDEFAULT);
+      case MyDslPackage.FUNCTION__OP:
+        setOp(OP_EDEFAULT);
+        return;
+      case MyDslPackage.FUNCTION__LIST:
+        setList(LIST_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +203,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case MyDslPackage.FUNCTION__VAR_A:
-        return varA != VAR_A_EDEFAULT;
+      case MyDslPackage.FUNCTION__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case MyDslPackage.FUNCTION__LIST:
+        return LIST_EDEFAULT == null ? list != null : !LIST_EDEFAULT.equals(list);
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +222,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (varA: ");
-    result.append(varA);
+    result.append(" (op: ");
+    result.append(op);
+    result.append(", list: ");
+    result.append(list);
     result.append(')');
     return result.toString();
   }

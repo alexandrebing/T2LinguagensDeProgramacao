@@ -3,14 +3,23 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Model:
-	arguments+=Function;
+	arguments+=Arguments;
+	
+Arguments:
+	Function | Variable
+;
+
+Variable:
+	varA=INT | varB=ID
+;
 	
 Function:
-	'(' Operation varA=INT (INT)* ')' | List;
+	'(' op=Operation varA=INT (INT)* ')' | list=List;
 
 Operation:
 	'+'|'-'
 ;
+
 
 List:
 	"`"? "(" (INT)*")"
